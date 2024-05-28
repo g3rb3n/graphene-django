@@ -211,15 +211,15 @@ class DjangoConnectionField(ConnectionField):
 
         if max_limit:
             if first:
-                assert first <= max_limit, (
-                    "Requesting {} records on the `{}` connection exceeds the `first` limit of {} records."
-                ).format(first, info.field_name, max_limit)
+                #assert first <= max_limit, (
+                #    "Requesting {} records on the `{}` connection exceeds the `first` limit of {} records."
+                #).format(first, info.field_name, max_limit)
                 args["first"] = min(first, max_limit)
 
             if last:
-                assert last <= max_limit, (
-                    "Requesting {} records on the `{}` connection exceeds the `last` limit of {} records."
-                ).format(last, info.field_name, max_limit)
+                #assert last <= max_limit, (
+                #    "Requesting {} records on the `{}` connection exceeds the `last` limit of {} records."
+                #).format(last, info.field_name, max_limit)
                 args["last"] = min(last, max_limit)
 
         if offset is not None:
